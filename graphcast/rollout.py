@@ -108,8 +108,9 @@ def chunked_prediction_generator(
   """
 
   # Create copies to avoid mutating inputs.
+  # to nechci protoze to zere zbytecne moc pameti kdyz targets ma 64 gb
   inputs = xarray.Dataset(inputs)
-  targets_template = xarray.Dataset(targets_template)
+  #targets_template = xarray.Dataset(targets_template)
   forcings = xarray.Dataset(forcings)
 
   if "datetime" in inputs.coords:
